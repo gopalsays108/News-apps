@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AbsListView
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -68,6 +69,7 @@ class BreakingNewsFragment : BaseFragment() {
                     hideProgressBar()
                     response.message?.let { message ->
                         Log.d(TAG, "onViewCreated: Error while API Call $message")
+                        Toast.makeText(context, "Error occured $message", Toast.LENGTH_SHORT).show()
                     }
                 }
 
